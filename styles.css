@@ -839,6 +839,112 @@ b, strong { font-weight: 700; }
   width: fit-content;
 }
 
+/* ---------------- tech stack cards ---------------- */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 32px;
+}
+.tech-card {
+  background: var(--paper);
+  border: var(--border);
+  border-radius: 22px;
+  padding: 26px 22px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+.tech-card:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  box-shadow: var(--shadow-lg);
+}
+.tech-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.tech-card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  border: 2px solid var(--ink);
+  display: grid;
+  place-items: center;
+  font-size: 1.45rem;
+  background: var(--cream);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.tech-card--c .tech-card__icon { background: #E0E7FF; color: var(--navy); }
+.tech-card--python .tech-card__icon { background: #FEF3C7; }
+.tech-card--ai .tech-card__icon { background: #FFEDD5; }
+.tech-card--ml .tech-card__icon { background: #FCE7F3; }
+.tech-card--trainer .tech-card__icon { background: #CFFAFE; }
+.tech-card--solving .tech-card__icon { background: #DCFCE7; }
+
+.tech-card__badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  background: var(--cream);
+  color: var(--ink);
+}
+.tech-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tech-card h3 {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.16rem;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.25;
+}
+.tech-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.tech-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tech-card__tags li {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  background: var(--cream);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 580px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------------- side quest ---------------- */
 .quests { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .quest {
